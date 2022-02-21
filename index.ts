@@ -25,10 +25,27 @@ export const mixUpFirstLetter = (password: number[]) => {
   return password
 }
 
+export const jumbleNumbers = (password: number[]) => {
+  let jumbledNumbers = [password[0]];
+  for (let i=1; i<password.length; i++) {
+    jumbledNumbers.push((password[i] + jumbledNumbers[i -1]) % 26);
+  }
+  return jumbledNumbers;
+}
+
+export const numbersToLetters = (password: number[]): string => {
+  let letters = "";
+  for (let i=0; i<password.length; i++) {
+    const noAsLetter = password[i] + 65;
+    letters = letters + String.fromCharCode(noAsLetter);
+  }
+  return letters;
+}
+
 export const scrambler = (password: string) => {
   
   let crackedPW;
-  crackedPW = mixUpFirstLetter(lettersToNumbers(capsOnly(password)));
+  crackedPW = numbersToLetters(jumbleNumbers(mixUpFirstLetter(lettersToNumbers(capsOnly(password)))));
   return crackedPW;
 
 }
