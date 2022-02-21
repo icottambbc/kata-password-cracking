@@ -1,15 +1,11 @@
-import { scrambler, capsIt } from "./index";
+import { scrambler, capsOnly } from "./index";
 
 test('capsIt', () => {
-  expect(capsIt("PAssWOrD")).toBe("PASSWORD");
+  expect(capsOnly("PAssWOrD")).toBe("PASSWORD");
 })
 
 test('capsIt', () => {
-  expect(capsIt("gi1bReI54?)")).toBe("GI1BREI54?)");
-})
-
-test('capsIt', () => {
-  expect(capsIt("PAssWOrD")).toBe("PASSWORD");
+  expect(capsOnly("gi1bReI54?)")).toBe("GIBREI");
 })
 
 
