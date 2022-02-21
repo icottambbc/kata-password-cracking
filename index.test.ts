@@ -1,4 +1,4 @@
-import { scrambler, capsOnly, lettersToNumbers } from "./index";
+import { scrambler, capsOnly, lettersToNumbers, mixUpFirstLetter } from "./index";
 
 test('capsIt', () => {
   expect(capsOnly("PAssWOrD")).toBe("PASSWORD");
@@ -14,6 +14,14 @@ test('lettersToNumbers', () => {
 
 test('lettersToNumbers', () => {
   expect(lettersToNumbers("SSKCYMDG")).toEqual([18,18,10,2,24,12,3,6]);
+})
+
+test('mixUpFirstLetter', () => {
+  expect(mixUpFirstLetter([18,18,10,2,24,12,3,6])).toEqual([7,18,10,2,24,12,3,6]);
+})
+
+test('mixUpFirstLetter', () => {
+  expect(mixUpFirstLetter([1,18,10])).toEqual([16,18,10]);
 })
 
 test('adds 1 + 2 to equal 3', () => {

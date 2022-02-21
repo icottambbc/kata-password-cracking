@@ -20,10 +20,15 @@ export const lettersToNumbers = (password: string): number[] => {
   return numbers
 }
 
+export const mixUpFirstLetter = (password: number[]) => {
+  password[0] = ((password[0] + 15) % 26);
+  return password
+}
+
 export const scrambler = (password: string) => {
   
   let crackedPW;
-  crackedPW = lettersToNumbers(capsOnly(password));
+  crackedPW = mixUpFirstLetter(lettersToNumbers(capsOnly(password)));
   return crackedPW;
 
 }
