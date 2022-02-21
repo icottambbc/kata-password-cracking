@@ -1,15 +1,15 @@
 import { scrambler, capsOnly, lettersToNumbers, mixUpFirstLetter, jumbleNumbers, numbersToLetters } from "./index";
 
-test('capsIt', () => {
+test('capsOnly', () => {
   expect(capsOnly("PAssWOrD")).toBe("PASSWORD");
 })
 
-test('capsIt', () => {
+test('capsOnly', () => {
   expect(capsOnly("gi1bReI54?)")).toBe("GIBREI");
 })
 
 test('lettersToNumbers', () => {
-  expect(lettersToNumbers("ABCEDE")).toEqual([0,1,2,4,3,4]);
+  expect(lettersToNumbers("PASSWORD")).toEqual([15,0,18,18,22,14,17,3]);
 })
 
 test('lettersToNumbers', () => {
@@ -17,15 +17,15 @@ test('lettersToNumbers', () => {
 })
 
 test('mixUpFirstLetter', () => {
-  expect(mixUpFirstLetter([18,18,10,2,24,12,3,6])).toEqual([7,18,10,2,24,12,3,6]);
+  expect(mixUpFirstLetter([15,0,18,18,22,14,17,3])).toEqual([18,0,18,18,22,14,17,3]);
 })
 
 test('mixUpFirstLetter', () => {
-  expect(mixUpFirstLetter([1,18,10])).toEqual([16,18,10]);
+  expect(mixUpFirstLetter([1,18,10])).toEqual([4,18,10]);
 })
 
 test('jumbleNumbers', () => {
-  expect(jumbleNumbers([18,0,18,2,24])).toEqual([18,18,10,12,10]);
+  expect(jumbleNumbers([18,0,18,18,22,14,17,3])).toEqual([18,18,10,2,24,12,3,6]);
 })
 
 test('jumbleNumbers', () => {
@@ -33,14 +33,14 @@ test('jumbleNumbers', () => {
 })
 
 test('numbersToLetters', () => {
-  expect(numbersToLetters([18,0,18,2,24])).toEqual("SASCY");
+  expect(numbersToLetters([18,18,10,2,24,12,3,6])).toEqual("SSKCYMDG");
 })
 
 test('numbersToLetters', () => {
   expect(numbersToLetters([2,17,10,22,12])).toEqual("CRKWM");
 })
 
-test('adds 1 + 2 to equal 3', () => {
+test('end game', () => {
   expect(scrambler("PASSWORD")).toBe("SSKCYMDG");
 });
 

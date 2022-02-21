@@ -21,7 +21,8 @@ export const lettersToNumbers = (password: string): number[] => {
 }
 
 export const mixUpFirstLetter = (password: number[]) => {
-  password[0] = ((password[0] + 15) % 26);
+  let mixedUpNo = ((password[0] + 3) % 26);
+  password[0] = mixedUpNo;
   return password
 }
 
