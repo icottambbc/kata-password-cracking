@@ -11,10 +11,19 @@ export const capsOnly = (password: string): string => {
   return capsPwd;
 }
 
-export const scrambler = (password: string): string => {
+export const lettersToNumbers = (password: string): number[] => {
+  let numbers = [];
+  for (let i=0; i<password.length; i++) {
+    const letterAsNo = password.charCodeAt(i) - 65;
+    numbers.push(letterAsNo);
+  }
+  return numbers
+}
+
+export const scrambler = (password: string) => {
   
   let crackedPW;
-  crackedPW = capsOnly(password);
+  crackedPW = lettersToNumbers(capsOnly(password));
   return crackedPW;
 
 }
