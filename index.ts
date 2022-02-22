@@ -93,7 +93,7 @@ const readAndProcess = () => {
     }
   }
   
-  fs.writeFileSync("./passwords-cracked.txt", JSON.stringify(crackedPWS));
+  fs.writeFileSync("./passwords-cracked.json", JSON.stringify(crackedPWS));
 
 }
 
