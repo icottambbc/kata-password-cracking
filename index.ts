@@ -92,8 +92,10 @@ const readAndProcess = () => {
       crackedPWS.push(`${name} you password is: ${match[0][passwordToCheck]}`);
     }
   }
+
+  let textcrackedPWS = crackedPWS.join('\n');
   
-  fs.writeFileSync("./passwords-cracked.json", JSON.stringify(crackedPWS));
+  fs.writeFileSync("./passwords-cracked.txt", textcrackedPWS, "utf8");
 
 }
 
